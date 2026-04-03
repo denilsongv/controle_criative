@@ -14,20 +14,21 @@ ID_PLANILHA = "1XzaYeaNvzfnC5C5Hf4drW-6dpPydx2jw_cVJ7qsHnuc"
 NOME_ABA = "criative"
 
 # ===== AUTENTICAÇÃO (local ou cloud) =====
-CREDS_DICT = None
+def obter_credenciais():
+    # 1. Modo desenvolvimento (arquivo local)
+    if os.path.exists(r"C:\Users\denil\Desktop\projetos\controle-442619-1a5ef1da59f3.json"):
+        with open(r"C:\Users\denil\Desktop\projetos\controle-442619-1a5ef1da59f3.json", "r") as f:
+            return json.load(f)
+    else:
+        # 2. Modo Streamlit Cloud (secrets em formato TOML)
+        try:
+            # st.secrets já é um dicionário com as chaves: type, project_id, etc.
+            return dict(st.secrets)
+        except Exception as e:
+            st.error(f"Erro ao carregar credenciais: {e}")
+            st.stop()
 
-# 1. Tenta usar o arquivo local (modo desenvolvimento)
-if os.path.exists(r"C:\Users\denil\Desktop\projetos\controle-442619-1a5ef1da59f3.json"):
-    with open(r"C:\Users\denil\Desktop\projetos\controle-442619-1a5ef1da59f3.json", "r") as f:
-        CREDS_DICT = json.load(f)
-else:
-    # 2. Está no Streamlit Cloud: o secrets está na chave 'credentials_json'
-    try:
-        creds_str = st.secrets["credentials_json"]
-        CREDS_DICT = json.loads(creds_str)
-    except Exception as e:
-        st.error(f"Erro ao carregar credenciais: {e}")
-        st.stop()
+CREDS_DICT = obter_credenciais()
 
 # ==================== CONEXÕES COM APIs ====================
 @st.cache_resource
