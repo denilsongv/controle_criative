@@ -7,7 +7,7 @@ from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build
 
 # ===== CONFIGURAÇÕES =====
-CAMINHO_JSON =  "C:\Users\denil\Desktop\programas Python\controle criative\controle-442619-1a5ef1da59f3.json"
+CAMINHO_JSON = "C:\Users\denil\Desktop\programas Python\controle criative\controle-442619-1a5ef1da59f3.json"
 ID_PLANILHA = "1XzaYeaNvzfnC5C5Hf4drW-6dpPydx2jw_cVJ7qsHnuc"
 NOME_ABA = "criative"
 # =========================
