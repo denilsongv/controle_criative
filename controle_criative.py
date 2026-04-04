@@ -166,8 +166,9 @@ def salvar_lancamento(data, revenda, cliente, valor, forma_pagamento, produto, s
             situacao = "pendente"
 
         titulo_doc = f"{cliente} - {data.strftime('%d/%m/%Y')} - {produto}"
-        link_doc = criar_documento_google_docs(titulo_doc, texto_completo)
+        link_doc = ""
 
+        
         if not link_doc:
             st.error("Lançamento não salvo porque o documento não pôde ser criado.")
             return None
