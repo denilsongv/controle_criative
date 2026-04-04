@@ -180,8 +180,9 @@ def salvar_lancamento(data, revenda, cliente, valor, forma_pagamento, produto, s
             forma_pagamento,
             produto,
             situacao,
-            link_doc,
-        ]
+            texto_completo
+
+       ]
 
         sheet.append_row(nova_linha)
         st.cache_data.clear()
