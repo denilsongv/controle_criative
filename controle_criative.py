@@ -619,6 +619,18 @@ if st.sidebar.button("Testar criação de Docs"):
         link = criar_documento_google_docs("Teste Streamlit", "Documento criado com sucesso.")
         if link:
             st.sidebar.success("Docs OK")
+            
             st.sidebar.write(link)
     except Exception as e:
         st.sidebar.error(f"Erro Docs: {e}")
+
+st.write(st.secrets)
+
+
+if st.button("TESTAR CONEXÃO"):
+    try:
+        aba = conectar_planilha()
+        dados = aba.get_all_records()
+        st.success(f"Funcionou! {len(dados)} linhas encontradas.")
+    except Exception as e:
+        st.error(f"Erro: {e}")
