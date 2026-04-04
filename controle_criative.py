@@ -417,6 +417,7 @@ elif menu == "➕ Novo Lançamento":
 
 elif menu == "✏️ Editar/Excluir":
     st.header("✏️ Editar ou Excluir Lançamento")
+    @st.cache_data(ttl=5)
     df = carregar_dados()
 
     if df.empty:
