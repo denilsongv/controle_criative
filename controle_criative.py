@@ -12,7 +12,7 @@ NOME_ABA = "criative"
 # =========================
 
 st.set_page_config(page_title="HZ Telecom", layout="wide")
-st.title("📱 HZ Telecom - Gestão de Lançamentos (Google Docs)")
+st.title("📱 Criative- Gestão de Lançamentos (Google Docs)")
 
 
 # ==================== CONEXÕES ====================
