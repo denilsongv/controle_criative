@@ -16,6 +16,7 @@ st.title("📱 HZ Telecom - Gestão de Lançamentos (Google Docs)")
 
 
 # ==================== CONEXÕES ====================
+
 @st.cache_resource
 def conectar_google():
     scopes = [
@@ -24,10 +25,10 @@ def conectar_google():
         "https://www.googleapis.com/auth/documents",
     ]
 
-    creds = Credentials.from_service_account_info(
-        dict(st.secrets["gcp_service_account"]),
-        scopes=scopes
-    )
+    info = dict(st.secrets["gcp_service_account"])
+    info["private_key"] = info["private_key"].replace("\\n", "\n")
+
+    creds = Credentials.from_service_account_info(info, scopes=scopes)
     return creds
 
 
