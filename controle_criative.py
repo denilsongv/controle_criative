@@ -336,7 +336,7 @@ if menu == "📋 Dashboard":
 
         with tab3:
             if col_id and col_cliente:
-                for _, row in df.iterrows():
+                for i, row in df.reset_index(drop=True).iterrows():
                     data_formatada = row["data"].strftime("%d/%m/%Y") if pd.notna(row["data"]) else "Sem data"
                     with st.expander(f"📝 ID {row[col_id]} - {row[col_cliente]} - {data_formatada}"):
                         texto = row[col_texto] if col_texto and pd.notna(row[col_texto]) else ""
@@ -344,7 +344,7 @@ if menu == "📋 Dashboard":
                             "Conteúdo",
                             texto,
                             height=200,
-                            key=f"text_{row[col_id]}",
+                            key=f"texto_dashboard_{i}",
                             disabled=True
                         )
 
