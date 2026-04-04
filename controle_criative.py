@@ -169,9 +169,7 @@ def salvar_lancamento(data, revenda, cliente, valor, forma_pagamento, produto, s
         link_doc = ""
 
         
-        if not link_doc:
-            st.error("Lançamento não salvo porque o documento não pôde ser criado.")
-            return None
+       
 
         nova_linha = [
             novo_id,
