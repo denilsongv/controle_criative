@@ -15,7 +15,7 @@ ID_PLANILHA = "1XzaYeaNvzfnC5C5Hf4drW-6dpPydx2jw_cVJ7qsHnuc"
 NOME_ABA = "criative"
 
 st.set_page_config(page_title="HZ Telecom", layout="wide", page_icon="📱")
-st.title("📱 HZ Telecom - Gestão de Lançamentos")
+st.title("📱 Criative - Gestão de Lançamentos")
 
 
 # =========================
