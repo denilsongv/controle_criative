@@ -473,7 +473,7 @@ if menu == "📋 Dashboard":
         with tab1:
             def highlight_pendente(row):
                 if col_forma and row.get(col_forma) == "aguardando pagamento":
-                    return ["background-color: #ffcccc"] * len(row)
+                    return ["background-color: #ffc222"] * len(row)
                 return [""] * len(row)
 
             styled_df = df.style.apply(highlight_pendente, axis=1)
